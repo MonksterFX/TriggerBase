@@ -1,0 +1,14 @@
+{
+  "type": "sqlite",
+  "database": "./database/trigger.sqlite",
+  "synchronize": true,
+  "logging": false,
+  "entities": ["./dist/db/entity/*.js"],
+  "subscribers": ["./dist/db/subscriber/*.js"],
+  "migrations": ["./dist/db/migration/*.js"],
+  "cli": {
+    "entities": ["./src/db/entity/**/*.ts"],
+    "migrations": ["./src/db/migration/**/*.ts"],
+    "subscribers": ["./src/db/subscriber/**/*.ts"]
+  }
+}

@@ -1,0 +1,13 @@
+###
+POST http://localhost:3000/task HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "max",
+  "executeAt": null,
+  "message": {"hello":"world"}
+}
+
+### 
+GET http://localhost:3000/task HTTP/1.1
+Content-Type: application/json
