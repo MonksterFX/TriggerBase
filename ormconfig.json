@@ -3,9 +3,9 @@
   "database": "./database/trigger.sqlite",
   "synchronize": true,
   "logging": false,
-  "entities": ["./dist/db/entity/*.js"],
-  "subscribers": ["./dist/db/subscriber/*.js"],
-  "migrations": ["./dist/db/migration/*.js"],
+  "entities": ["**/db/entity/*{.ts,.js}"],
+  "subscribers": ["**/db/subscriber/*{.ts,.js}"],
+  "migrations": ["**/db/migration/*{.ts,.js}"],
   "cli": {
     "entities": ["./src/db/entity/**/*.ts"],
     "migrations": ["./src/db/migration/**/*.ts"],

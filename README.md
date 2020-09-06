@@ -10,3 +10,7 @@ Extensible sheduling database for events with Node.js, Sqlite and Cron
 # activate debug on mac in vcs
 
 terminal.integrated.inheritEnv = true
+
+# tutorials
+
+https://dev.to/fgyimah/express-with-typescript-and-typeorm-part-1-1mej
