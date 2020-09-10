@@ -4,8 +4,8 @@ Content-Type: application/json
 
 {
   "name": "simple trigger",
-  "executeAt": "2020-09-10T18:01:00+02:00",
-  "message": {"hello":"world"}
+  "executeAt": "2020-09-10T15:24:00.000Z",
+  "message": {"test":"simple trigger"}
 }
 
 ### 

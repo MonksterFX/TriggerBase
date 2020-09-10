@@ -1,16 +1,29 @@
 # TriggerBase
 
-Extensible sheduling database for events with Node.js, Sqlite and Cron
+Lightwight extensible sheduling database for events with Node.js, Sqlite
 
-# core libaries in use for timing
+## process
 
-- ms - https://www.npmjs.com/package/ms
-- delay - https://www.npmjs.com/package/delay
+- add trigger via express rest api into the database
+- check for new triggers
 
-# activate debug on mac in vcs
+## trigger
 
-terminal.integrated.inheritEnv = true
+A trigger contains the following fields:
 
-# tutorials
+- **id**: internal database id
+- **name**: name of the trigger
+- **executeAt**: execution time
+- **message**: JSON formated message to use in extension execution
 
-https://dev.to/fgyimah/express-with-typescript-and-typeorm-part-1-1mej
+## SimpleHttpExtension
+
+The standard extension is executed each time a trigger has surpassed its execution time. The trigger will be deleted after it has been successfully execution.
+
+## enviroment variables
+
+tbd.
+
+## deploy on docker
+
+tbd.
