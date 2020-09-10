@@ -1,13 +1,14 @@
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
+import { Extension } from '../shared/extension';
 
-class HttpExtension implements Extension {
-  name = 'TB-HTTP-01';
+export class SimpleHttpExtension implements Extension {
+  name = 'simple http executor';
 
   initialize(): Promise<this> {
     throw new Error('Method not implemented.');
   }
 
-  async execute(message: JSON): Promise<any> {
-    return axios.post('http://localhost:3000/test', message);
+  async execute(message: JSON): Promise<AxiosResponse> {
+    return axios.post('http://localhost:3000/mirror', message);
   }
 }

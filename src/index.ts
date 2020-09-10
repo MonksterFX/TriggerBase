@@ -1,11 +1,12 @@
 import { config } from './config/config';
 import express from 'express';
 
-import { createConnection, getRepository, getConnection } from 'typeorm';
+import { createConnection, getConnection } from 'typeorm';
 import { Trigger } from './db/entity/Trigger';
 import * as bodyParser from 'body-parser';
 import { Request, Response } from 'express';
 import morgan from 'morgan';
+import { initTriggerService } from './services/trigger.service';
 
 // todo: to config
 const MAX_EXEC_TIME = 500;
@@ -31,6 +32,11 @@ app.get('/task/count', async (req: Request, res: Response) => {
   res.send(`elements: ${count}`);
 });
 
+app.post('/mirror', async (req: Request, res: Response) => {
+  console.log(req.body);
+  res.send(req.body);
+});
+
 app.post('/task', async (req: Request, res: Response) => {
   // convert json to string for sqlite
   req.body.message = JSON.stringify(req.body.message);
@@ -44,6 +50,7 @@ app.post('/task', async (req: Request, res: Response) => {
 createConnection().then((val) => {
   const server = app.listen(config.get('port'));
   console.log(`Express application is up and running on port 3000`);
+  initTriggerService();
 });
 
 export = null;

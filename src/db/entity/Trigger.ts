@@ -8,7 +8,7 @@ export class Trigger {
   @Column()
   name: string;
 
-  @Column()
+  @Column({ type: 'date' })
   executeAt: Date;
 
   @Column()
